@@ -1,0 +1,23 @@
+# /etc/nginx/sites-available/poems
+
+server {
+    server_name poems_domain www.poems_domain;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+
+
+  location /static/ {
+    autoindex on;
+    alias <path_to_django_poems_project_root>/staticfiles/;
+  }
+
+  location /media/ {
+    autoindex on;
+    alias <path_to_django_poems_project_root>/media/;
+  }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/run/poems.sock;
+    }
+}

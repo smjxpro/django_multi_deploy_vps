@@ -1,0 +1,23 @@
+# /etc/nginx/sites-available/lyrics
+
+server {
+    server_name lyrics_domain www.lyrics_domain;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+
+
+  location /static/ {
+    autoindex on;
+    alias <path_to_django_lyrics_project_root>/staticfiles/;
+  }
+
+  location /media/ {
+    autoindex on;
+    alias <path_to_django_lyrics_project_root>/media/;
+  }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/run/lyrics.sock;
+    }
+}

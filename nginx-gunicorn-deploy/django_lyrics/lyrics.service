@@ -1,0 +1,20 @@
+# /etc/systemd/system/lyrics.service
+
+[Unit]
+Description=gunicorn daemon
+Requires=lyrics.socket
+After=network.target
+
+
+[Service]
+User=<user-name>
+Group=www-data
+WorkingDirectory=<path_to_django_lyrics_project_root>
+ExecStart=<path_to_django_lyrics_project_virtual_environment>/bin/gunicorn \
+    --access-logfile - \
+    --workers 3 \
+    --bind unix:/run/lyrics.sock \
+    lyrics.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
