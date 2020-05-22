@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{{ lyric }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>{{ lyric.song }}</h1>
+        <h4>{{ lyric.artist }}</h4>
+        <h4>{{ lyric.album }}</h4>
+        <hr>
+        <p>
+            {{ lyric.lyric }}
+
+        </p>
+    </div>
+
+{% endblock content %}
