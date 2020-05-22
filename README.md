@@ -30,7 +30,7 @@
 
 `pip install -r requirements.txt`
 
-**4. Create and adjust _`local_settings.py`_ in _`django_lyrics/django_lyrics/`_**
+**4. Create and adjust `local_settings.py` in `django_lyrics/django_lyrics/`**
 
 **5. Collect static files:**
 
@@ -94,7 +94,7 @@
 
 `pip install -r requirements.txt`
 
-**4. Create and adjust _`local_settings.py`_ in _`django_poems/django_poems/`_**
+**4. Create and adjust `local_settings.py` in `django_poems/django_poems/`**
 
 **5. Collect static files:**
 
