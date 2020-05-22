@@ -1,5 +1,11 @@
 # Deploy Multiple Django app on VPS using Nginx and Gunicorn
 
+###_This is a deployment example of multiple Django app (project) using Nginx and Gunicorn. This particular example uses two separate Django app (project) namely `django_lyrics` which is a simple lyrics app and `django_poems` which is a simple poem app. This example also covers the recommended initial project setup in Django apps (Setting up `STATIC` and `MEDIA` roots and URLs, Custom `AUTH_USER_MODEL`, `local_settings.py` to protect secret keys and configurations etc.)_
+
+##
+
+# 
+
 **1. Install Nginx:**
 
 `sudo apt install nginx`
@@ -138,4 +144,4 @@
 
 ##
 
-## _You can deploy as many app you want following above method_
+#####_You can deploy as many app you want following above method_
